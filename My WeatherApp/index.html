@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Global Weather Dashboard (Open‑Meteo)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="World weather dashboard using Open‑Meteo (no API key)." />
+</head>
+<body>
+  <div id="bg" class="weather-bg clear-day"></div>
+
+  <div class="app">
+    <header>
+      <h1>Global Weather</h1>
+      <div class="controls">
+        <input id="search" placeholder="Search city (e.g. London or London,GB)" />
+        <button id="searchBtn">Search</button>
+        <button id="geoBtn" title="Use my location">Use my location</button>
+        <select id="units" title="Units">
+          <option value="metric">Metric (°C, m/s)</option>
+          <option value="imperial">Imperial (°F, mph)</option>
+        </select>
+      </div>
+    </header>
+
+    <main>
+      <!-- Dashboard -->
+      <section class="dashboard card">
+        <div class="left">
+          <div class="place-time">
+            <h2 id="place">—</h2>
+            <div id="dateTime" class="muted">—</div>
+          </div>
+
+          <div class="current-big">
+            <div id="icon" class="icon">—</div>
+            <div class="temps">
+              <div id="temp" class="temp">—</div>
+              <div id="desc" class="desc muted">—</div>
+            </div>
+          </div>
+
+          <div class="details-row muted">
+            <div id="feels">Feels: —</div>
+            <div id="humidity">Humidity: —</div>
+            <div id="wind">Wind: —</div>
+            <div id="sun">Sun: —</div>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="notif-controls">
+            <label class="toggle">
+              <input type="checkbox" id="notifToggle" />
+              <span>Notifications</span>
+            </label>
+            <div class="notif-options">
+              <label><input type="checkbox" id="notifToday" checked /> Today</label>
+              <label><input type="checkbox" id="notifUpcoming" checked /> Upcoming</label>
+            </div>
+          </div>
+
+          <div class="mini-forecast">
+            <div class="mini-item">
+              <div class="muted">Now</div>
+              <div id="miniNow">—</div>
+            </div>
+            <div class="mini-item">
+              <div class="muted">High</div>
+              <div id="miniHigh">—</div>
+            </div>
+            <div class="mini-item">
+              <div class="muted">Low</div>
+              <div id="miniLow">—</div>
+            </div>
+            <div class="mini-item">
+              <div class="muted">Chance</div>
+              <div id="miniPop">—</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="hourly" class="card">
+        <h3>Hourly (next 12 hrs)</h3>
+        <div id="hourlyList" class="list"></div>
+      </section>
+
+      <section id="daily" class="card">
+        <h3>7-Day Forecast</h3>
+        <div id="dailyList" class="list"></div>
+      </section>
+
+      <footer class="muted">
+        Data by <a href="https://open-meteo.com" target="_blank" rel="noopener">Open‑Meteo</a>.
+      </footer>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
