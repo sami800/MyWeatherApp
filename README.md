@@ -2,6 +2,8 @@
 Global Weather App
 A responsive web weather dashboard that shows the current weather, hourly and 7‑day forecasts, dynamic backgrounds that mimic the weather and day/night, timezone‑aware date/time, and optional browser notifications. Uses Open‑Meteo (no API key required) for geocoding and forecasts.
 
+![image alt](https://github.com/sami800/MyWeatherApp/blob/68dabc04d2309534b52cbe9597d49b58efa994fb/Screenshot%20(2).png)
+
 This repository contains a single‑page client app (HTML/CSS/JS) you can run locally or host on any static web host.
 
 ---
